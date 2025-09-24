@@ -1,0 +1,92 @@
+:root {
+  --font-main: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --bg-body: #f8f9fa;
+  --bg-card: #ffffff;
+  --text-color: #2c2c2c;
+  --accent-color: #6c5ce7;
+  --border-color: #e0e0e0;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.1);
+  --border-radius: 12px;
+  --spacing: 24px;
+  --transition-speed: 0.3s;
+  --font-size-base: 16px;
+  --font-size-title: 20px;
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: var(--font-size-base);
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-body);
+  color: var(--text-color);
+  line-height: 1.75;
+  letter-spacing: 0.3px;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--spacing);
+  padding: var(--spacing);
+  box-sizing: border-box;
+}
+
+music-card {
+  display: block;
+  background-color: var(--bg-card);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed), border-color var(--transition-speed);
+}
+
+music-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-color);
+}
+
+playlist-panel {
+  display: block;
+  background-color: var(--bg-card);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  transition: box-shadow var(--transition-speed), border-color var(--transition-speed);
+}
+
+playlist-panel:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-color);
+}
+
+music-card h3,
+playlist-panel h3 {
+  font-size: var(--font-size-title);
+  margin-top: 0;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+a:hover {
+  color: darken(var(--accent-color), 10%);
+}
